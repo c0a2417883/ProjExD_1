@@ -25,10 +25,10 @@ def main():
             kk_rct.move_ip((0, -1))
         if key_lst[pg.K_DOWN]:
             kk_rct.move_ip((0, +1))
-        if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip((-1, 0))
         if key_lst[pg.K_RIGHT]:
             kk_rct.move_ip((1, 0))
+        else:
+            kk_rct.move_ip((-1, 0))
         if x == 3200:
             x = 0
         screen.blit(bg_img, [-x, 0])
