@@ -16,7 +16,6 @@ def main():
     kk_rct = kk_img.get_rect()
     kk_rct.center = 300,200
     tmr = 0
-    x = 0
     move = [0, 0]
     while True:
         for event in pg.event.get():
@@ -33,17 +32,12 @@ def main():
             move[0] = 1
         kk_rct.move_ip(move)
         
-        if x == 3200:
-            x = 0
+        x = tmr
+        x = tmr%3200
         screen.blit(bg_img, [-x, 0])
+        screen.blit(bg_img_flip, [-x+1600, 0])
+        screen.blit(bg_img, [-x+3200, 0])
         screen.blit(kk_img, kk_rct)
-        if x >= 800:
-            screen.blit(bg_img_flip, [-x+1600, 0])
-            screen.blit(kk_img, kk_rct)
-        if x >= 2500:
-            screen.blit(bg_img, [-x+3200, 0])
-            screen.blit(kk_img, kk_rct)
-        x += 1
         pg.display.update()
         tmr += 1     
         clock.tick(200)
