@@ -7,12 +7,12 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def main():
     pg.display.set_caption("はばたけ！こうかとん")
-    screen = pg.display.set_mode((800, 600))
+    screen = pg.display.set_mode((800, 600)) 
     clock  = pg.time.Clock()
-    bg_img = pg.image.load("fig/pg_bg.jpg")
-    kk_img = pg.image.load("fig/3.png")
-    kk_img = pg.transform.flip(kk_img, True, False)
-    bg_img_flip = pg.transform.flip(bg_img, True, False)
+    bg_img = pg.image.load("fig/pg_bg.jpg") #　背景画像を描画し，画像Surfaceを生成
+    kk_img = pg.image.load("fig/3.png") #　こうかとん画像を読み込み，画像Surfaceを生成
+    kk_img = pg.transform.flip(kk_img, True, False) #　こうかとん画像の左右を反転
+    bg_img_flip = pg.transform.flip(bg_img, True, False) #　背景画像を反転
     kk_rct = kk_img.get_rect()
     kk_rct.center = 300,200
     tmr = 0
